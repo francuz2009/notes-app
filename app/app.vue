@@ -1,3 +1,4 @@
 <template>
-  <div>Главная</div>
+  <NuxtPage />
+  <BaseModalHost />
 </template>
