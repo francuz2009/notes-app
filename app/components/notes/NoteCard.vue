@@ -81,7 +81,10 @@ const displayTitle = computed(() => props.note.title.trim() || 'Без назв�
   cursor: pointer;
   transition:
     box-shadow 0.15s,
-    border-color 0.15s;
+    border-color 0.15s,
+    transform 0.12s ease,
+    background-color 0.12s ease;
+  will-change: transform;
 
   &:hover {
     box-shadow: $shadow-md;
@@ -90,6 +93,12 @@ const displayTitle = computed(() => props.note.title.trim() || 'Без назв�
   &:focus-visible {
     outline: 2px solid $color-focus;
     outline-offset: 2px;
+  }
+  &:active {
+    transform: scale(0.985);
+    background-color: darken($color-surface, 1%);
+    box-shadow: $shadow-sm;
+    transition-duration: 0.05s;
   }
 
   &__header {
